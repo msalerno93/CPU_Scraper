@@ -39,7 +39,7 @@ class NeweggScraper::CLI
                 puts menu
             when "exit"
                 bye
-                break
+                exit
             when "list"
                 cpu_list
                 puts "Please select a number from the above list or type exit."
