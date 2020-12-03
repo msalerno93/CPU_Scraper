@@ -57,4 +57,10 @@ class NeweggScraper::CLI
     def bye
         puts "Thank you for using this application to learn about the new Ryzen CPUs! Come again soon!!"
     end
+
+    # def cpu_method(parameter)
+    #     cpu = NeweggScraper::Scraper.get_cpu_info(parameter)
+    #     puts description(cpu)
+    #     puts menu
+    # end
 end
