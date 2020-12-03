@@ -19,29 +19,12 @@ class NeweggScraper::CLI
     end
 
     def interface
-        # menu = "\nEnter 'list' to see the full list or enter another number"
         puts "Please select a number from the above list or type exit."
         while true
-            
             input = gets.strip
             case input
             when "1", "2", "3", "4"
                 cpu_method(input)
-                # cpu = NeweggScraper::Scraper.get_cpu_info("1")
-                # puts description(cpu)
-                # puts menu
-            # when "2"
-            #     cpu = NeweggScraper::Scraper.get_cpu_info("2")
-            #     puts description(cpu)
-            #     puts menu
-            # when "3"
-            #     cpu = NeweggScraper::Scraper.get_cpu_info("3")
-            #     puts description(cpu)
-            #     puts menu
-            # when "4"
-            #     cpu = NeweggScraper::Scraper.get_cpu_info("4")
-            #     puts description(cpu)
-            #     puts menu
             when "exit"
                 bye
                 exit
