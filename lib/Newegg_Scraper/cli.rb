@@ -22,9 +22,10 @@ class NeweggScraper::CLI
             input = gets.strip
             case input
             when "1", "2", "3", "4"
-                cpu = NeweggScraper::Scraper.get_cpu_info("1")
-                puts description(cpu)
-                puts menu
+                return cpu_method("1")
+                # cpu = NeweggScraper::Scraper.get_cpu_info("1")
+                # puts description(cpu)
+                # puts menu
             # when "2"
             #     cpu = NeweggScraper::Scraper.get_cpu_info("2")
             #     puts description(cpu)
@@ -58,9 +59,9 @@ class NeweggScraper::CLI
         puts "Thank you for using this application to learn about the new Ryzen CPUs! Come again soon!!"
     end
 
-    # def cpu_method(parameter)
-    #     cpu = NeweggScraper::Scraper.get_cpu_info(parameter)
-    #     puts description(cpu)
-    #     puts menu
-    # end
+    def cpu_method("1")
+        cpu = NeweggScraper::Scraper.get_cpu_info("1")
+        puts description(cpu)
+        puts menu
+    end
 end
