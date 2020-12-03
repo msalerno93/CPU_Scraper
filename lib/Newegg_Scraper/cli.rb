@@ -25,18 +25,18 @@ class NeweggScraper::CLI
                 cpu = NeweggScraper::Scraper.get_cpu_info("1")
                 puts description(cpu)
                 puts menu
-            when "2"
-                cpu = NeweggScraper::Scraper.get_cpu_info("2")
-                puts description(cpu)
-                puts menu
-            when "3"
-                cpu = NeweggScraper::Scraper.get_cpu_info("3")
-                puts description(cpu)
-                puts menu
-            when "4"
-                cpu = NeweggScraper::Scraper.get_cpu_info("4")
-                puts description(cpu)
-                puts menu
+            # when "2"
+            #     cpu = NeweggScraper::Scraper.get_cpu_info("2")
+            #     puts description(cpu)
+            #     puts menu
+            # when "3"
+            #     cpu = NeweggScraper::Scraper.get_cpu_info("3")
+            #     puts description(cpu)
+            #     puts menu
+            # when "4"
+            #     cpu = NeweggScraper::Scraper.get_cpu_info("4")
+            #     puts description(cpu)
+            #     puts menu
             when "exit"
                 bye
                 exit
