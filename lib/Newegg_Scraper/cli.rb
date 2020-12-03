@@ -21,8 +21,8 @@ class NeweggScraper::CLI
             
             input = gets.strip
             case input
-            when "1"
-                cpu = NeweggScraper::Scraper.get_cpu_info("1")
+            when x+=1
+                cpu = NeweggScraper::Scraper.get_cpu_info("x")
                 puts description(cpu)
                 puts menu
             # when "2"
