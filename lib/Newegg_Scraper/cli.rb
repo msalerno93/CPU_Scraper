@@ -14,15 +14,19 @@ class NeweggScraper::CLI
         puts "4. AMD Ryzen 5 5600X"
     end
 
+    def menu
+        puts "Enter 'list' to see the full list or enter another number"
+    end
+
     def interface
-        menu = "\nEnter 'list' to see the full list or enter another number"
+        # menu = "\nEnter 'list' to see the full list or enter another number"
         puts "Please select a number from the above list or type exit."
         while true
             
             input = gets.strip
             case input
             when "1", "2", "3", "4"
-                return cpu_method("1")
+                cpu_method(input)
                 # cpu = NeweggScraper::Scraper.get_cpu_info("1")
                 # puts description(cpu)
                 # puts menu
@@ -59,8 +63,8 @@ class NeweggScraper::CLI
         puts "Thank you for using this application to learn about the new Ryzen CPUs! Come again soon!!"
     end
 
-    def cpu_method("1")
-        cpu = NeweggScraper::Scraper.get_cpu_info("1")
+    def cpu_method(userInput)
+        cpu = NeweggScraper::Scraper.get_cpu_info(userInput)
         puts description(cpu)
         puts menu
     end
