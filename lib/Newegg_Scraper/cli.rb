@@ -26,8 +26,6 @@ class NeweggScraper::CLI
                 cpu_method(input)
                 end
                 cpu_information = NeweggScraper::CPU.cpu_objects(info)
-                # self.cpu_objects(info)
-                # binding.pry
                 description(cpu_information)
                 menu
             when "exit"
@@ -53,8 +51,6 @@ class NeweggScraper::CLI
 
     def cpu_method(userInput)
         cpu = NeweggScraper::Scraper.get_cpu_info(userInput)
-        # puts description(cpu)
-        # puts menu
     end
 
     def cpu_names
