@@ -8,10 +8,7 @@ class NeweggScraper::CLI
     end
 
     def cpu_list
-        puts "1. AMD Ryzen 9 5950X"
-        puts "2. AMD Ryzen 9 5900X"
-        puts "3. AMD Ryzen 7 5800X"
-        puts "4. AMD Ryzen 5 5600X"
+        cpu_names.each.with_index(1) {|cpu, i| puts "#{i}. #{cpu}"}
     end
 
     def menu
@@ -24,7 +21,15 @@ class NeweggScraper::CLI
             input = gets.strip
             case input
             when "1", "2", "3", "4"
+                info = cpu_names[input.to_i - 1]
+                if !NeweggScraper::CPU.cpu_objects(info)
                 cpu_method(input)
+                end
+                cpu_information = NeweggScraper::CPU.cpu_objects(info)
+                # self.cpu_objects(info)
+                # binding.pry
+                description(cpu_information)
+                menu
             when "exit"
                 bye
                 exit
@@ -39,7 +44,7 @@ class NeweggScraper::CLI
     end
 
     def description(thing)
-        "Name: #{thing.name}\nPrice: #{thing.price}\nFrequency: #{thing.frequency}\nCore_Count: #{thing.core_count}\nAvailability: #{thing.availability}\nURL: #{thing.url}"
+        puts "Name: #{thing.name}\nPrice: #{thing.price}\nFrequency: #{thing.frequency}\nCore_Count: #{thing.core_count}\nAvailability: #{thing.availability}\nURL: #{thing.url}"
     end
 
     def bye
@@ -48,7 +53,11 @@ class NeweggScraper::CLI
 
     def cpu_method(userInput)
         cpu = NeweggScraper::Scraper.get_cpu_info(userInput)
-        puts description(cpu)
-        puts menu
+        # puts description(cpu)
+        # puts menu
+    end
+
+    def cpu_names
+        names = ["Ryzen 9 5950X", "Ryzen 9 5900X", "Ryzen 7 5800X", "Ryzen 5 5600X"]
     end
 end

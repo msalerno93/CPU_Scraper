@@ -2,7 +2,7 @@ class NeweggScraper::CPU
 
     attr_accessor :name, :price, :frequency, :core_count, :url, :availability
 
-    # @@all = []
+    @@all = []
 
     def initialize(name, price, frequency, core_count, url, availability)
         @name = name
@@ -11,7 +11,16 @@ class NeweggScraper::CPU
         @core_count = core_count
         @url = url
         @availability = availability
-        # @@all << self
+        @@all << self
+    end
+
+    def self.all
+        @@all
+    end
+
+
+    def self.cpu_objects(info)
+        self.all.find {|cpu| cpu.name == info}
     end
 
 end
